@@ -1,9 +1,11 @@
 .navbar {
   display: flex;
   align-items: center;
-  height: 39px;
   background-color: #ebeef3;
   color: #b1b4bb;
+  max-height: 39px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .navbar__toggle {
@@ -35,4 +37,36 @@
 .navbar__item_active {
   color: #ffffff;
   background-color: #2a3958;
+}
+
+@media (max-width: 1200px) {
+  .navbar {
+    display: block;
+  }
+  .navbar_open {
+    max-height: 600px !important;
+  }
+  .navbar__toggle {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 6px;
+    top: 10px;
+    width: 30px;
+  }
+  .navbar__togglebtn_item {
+    background-color: #2a3958;
+    height: 4px;
+    margin-bottom: 3px;
+    border-radius: 2px;
+    width: 100%;
+  }
+  .navbar__menu {
+    flex-direction: column;
+    padding-top: 50px;
+    position: relative;
+  }
+  .navbar__item {
+    width: 100%;
+  }
 }

@@ -283,7 +283,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="home__scrntable_opleft">
-                <span>
+                <span className="home__scrntable_dwrap">
                   <CustomDropdown
                     options={statusOptions}
                     selectedOption={filterOptions.status}
@@ -292,7 +292,7 @@ const Home = () => {
                     }}
                   />
                 </span>
-                <span>
+                <span className="home__scrntable_dwrap">
                   <CustomDropdown
                     options={orderOptions}
                     selectedOption={filterOptions.order}
@@ -301,7 +301,7 @@ const Home = () => {
                     }}
                   />
                 </span>
-                <span>
+                <span className="home__scrntable_dwrap">
                   <CustomDropdown
                     options={viewOptions}
                     selectedOption={viewOption}

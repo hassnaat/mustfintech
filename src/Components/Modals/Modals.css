@@ -36,6 +36,7 @@
   min-height: 198px;
   animation: boxSlideIn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   transform: translateY(-200%);
+  max-width: 95%;
 }
 .popup__content_header {
   width: 100%;
@@ -104,6 +105,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 95%;
+  max-height: 95vh;
+  overflow-y: auto;
 }
 .regmodal__content_header {
   display: flex;
@@ -302,5 +306,17 @@
   }
   100% {
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .regmodal__content_grid {
+    grid-template-columns: 1fr;
+  }
+  .regmodal__content_gitemdark {
+    padding: 5px;
+  }
+  .regmodal__content_gitemlight {
+    padding: 5px;
   }
 }

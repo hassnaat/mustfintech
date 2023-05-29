@@ -11,10 +11,12 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${isMenuOpen ? "navbar_open" : ""}`}>
-      <div className="navbar__toggle" onClick={toggleMenu}>
-        {isMenuOpen ? "Close" : "Menu"}
-      </div>
       <ul className="navbar__menu">
+        <div className="navbar__toggle" onClick={toggleMenu}>
+          <span className="navbar__togglebtn_item"></span>
+          <span className="navbar__togglebtn_item"></span>
+          <span className="navbar__togglebtn_item"></span>
+        </div>
         <li className="navbar__item">
           <NavLink
             exact

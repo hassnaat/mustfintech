@@ -30,6 +30,7 @@
   display: flex;
   justify-content: center;
   padding: 20px 0;
+  box-sizing: border-box;
 }
 .custom__table_pagination {
   display: flex;
@@ -65,4 +66,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 1200px) {
+  .custom__table_wrap {
+    max-width: 90vw;
+    overflow-x: auto;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+  .custom__table_pagination button {
+    width: 25px;
+    height: 25px;
+  }
 }

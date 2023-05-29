@@ -62,54 +62,56 @@ const Table = ({
   };
 
   return (
-    <div className="custom__table_wrap">
-      <table className="custom__table">
-        <thead
-          style={{ height: `${headerHeight}px` }}
-          className="custom__table_header"
-        >
-          <tr>
-            {columns.map((column, index) => (
-              <th
-                key={index}
-                style={{
-                  maxWidth: column.width || "fit-content",
-                  width: column.width || "100px",
-                  minWidth: column.width || "100px",
-                  borderLeft: index === 0 ? "none" : "2px solid white",
-                }}
-              >
-                <div>{column.title}</div>
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody className="custom__table_body">
-          {currentItems?.length > 0 &&
-            currentItems.map((item, index) => (
-              <tr
-                key={index}
-                className="custom__table_bdrow"
-                style={{
-                  height: `${rowHeight}px`,
-                  backgroundColor:
-                    striped && index % 2 !== 0 ? "#F9F9FB" : "white",
-                }}
-              >
-                {columns.map((column, columnIndex) => (
-                  <td key={columnIndex}>
-                    <div>{renderCellContent(item, column, index)}</div>
-                  </td>
-                ))}
-              </tr>
-            ))}
-        </tbody>
-      </table>
-      {currentItems?.length < 1 && (
-        <div className="custom__table_emptybody">
-          <p>조회 결과가 없습니다.</p>
-        </div>
-      )}
+    <div>
+      <div className="custom__table_wrap">
+        <table className="custom__table">
+          <thead
+            style={{ height: `${headerHeight}px` }}
+            className="custom__table_header"
+          >
+            <tr>
+              {columns.map((column, index) => (
+                <th
+                  key={index}
+                  style={{
+                    maxWidth: column.width || "fit-content",
+                    width: column.width || "100px",
+                    minWidth: column.width || "100px",
+                    borderLeft: index === 0 ? "none" : "2px solid white",
+                  }}
+                >
+                  <div>{column.title}</div>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody className="custom__table_body">
+            {currentItems?.length > 0 &&
+              currentItems.map((item, index) => (
+                <tr
+                  key={index}
+                  className="custom__table_bdrow"
+                  style={{
+                    height: `${rowHeight}px`,
+                    backgroundColor:
+                      striped && index % 2 !== 0 ? "#F9F9FB" : "white",
+                  }}
+                >
+                  {columns.map((column, columnIndex) => (
+                    <td key={columnIndex}>
+                      <div>{renderCellContent(item, column, index)}</div>
+                    </td>
+                  ))}
+                </tr>
+              ))}
+          </tbody>
+        </table>
+        {currentItems?.length < 1 && (
+          <div className="custom__table_emptybody">
+            <p>조회 결과가 없습니다.</p>
+          </div>
+        )}
+      </div>
       {/* Pagination */}
       {currentItems?.length > 0 && (
         <div className="custom__table_paginationwrap">
